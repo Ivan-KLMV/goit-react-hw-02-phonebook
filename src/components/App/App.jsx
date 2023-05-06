@@ -26,19 +26,11 @@ export class App extends Component {
     );
   };
 
-  deleteConact = e => {
+  deleteConact = id => {
     this.setState({
-      contacts: [
-        ...this.state.contacts.filter(
-          contact => contact.id !== e.currentTarget.id
-        ),
-      ],
+      contacts: [...this.state.contacts.filter(contact => contact.id !== id)],
     });
   };
-
-  // reset = () => {
-  //   this.setState({ name: '', number: '' });
-  // };
 
   render() {
     const visibleContacts = this.handleFilterContact();
